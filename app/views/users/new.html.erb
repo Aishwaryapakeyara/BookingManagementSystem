@@ -1,0 +1,20 @@
+<h1>Add New User</h1>
+
+<%= form_with model: @user do |form| %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %></div><br>
+<div>
+  <%= form.label :phone %>
+  <%= form.text_field :phone %></div><br>
+<div>
+  <%= form.label :email %>
+  <%= form.text_field :email %></div><br>
+<div>
+  <%= form.label :role_id %>
+  <%= collection_select(:user, :role_ids, Role.all, :id, :name, {:prompt => "Select Role"})%></div><br>
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>
