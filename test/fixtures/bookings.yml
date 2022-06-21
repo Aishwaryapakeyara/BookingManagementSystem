@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Status: MyString
+  Reason: MyString
+  Capacity: 1
+  event: one
+  user: one
+
+two:
+  Status: MyString
+  Reason: MyString
+  Capacity: 1
+  event: two
+  user: two
