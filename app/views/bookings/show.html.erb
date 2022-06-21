@@ -1,0 +1,43 @@
+<fieldset>
+<h2>Event</h2>
+<table>
+<thead>
+<th>Name</th>
+<th>Start time</th>
+<th>End time</th>
+<th>Location</th>
+<th>City</th>
+<th>Category</th>
+</thead>
+<tbody>
+<tr>
+<td><%= @booking.event.name %></td>
+<td><%= @booking.event.start_time %></td>
+<td><%= @booking.event.end_time %></td>
+<td><%= @booking.event.location.name %></td>
+<td><%= @booking.event.location.city.name %></td>
+<td><%= @booking.event.category.name %></td>
+</tr>
+</tbody>
+</table>
+</fieldset><br><br>
+<fieldset>
+<h2>User</h2>
+<table>
+<thead>
+<th>Name</th>
+<th>Phone Number</th>
+<th>Email</th>
+</thead>
+<tbody>
+<tr>
+<td><%= @booking.user.name %></td>
+<td><%= @booking.user.phone %></td>
+<td><%= @booking.user.email %></td>
+</tr>
+</tbody>
+</table>
+</fieldset>
+<h3>Change the status!</h3>
+<%= link_to 'Confirm', user_booking_confirm_path(user_id: @booking.user.id, booking_id: @booking.id), data: { "turbo-method": :put } %>
+<%= link_to 'Cancel', user_booking_cancel_path(user_id: @booking.user.id, booking_id: @booking.id), data: { "turbo-method": :put } %>
