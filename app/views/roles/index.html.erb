@@ -1,0 +1,15 @@
+<h1>Roles</h1>
+<table>
+<thead>
+<th>Name</th>
+</thead>
+<tbody>
+<% @role.each do |r| %>
+<tr>
+<td><%= r.name %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to "Add New Role",  new_role_path %>
