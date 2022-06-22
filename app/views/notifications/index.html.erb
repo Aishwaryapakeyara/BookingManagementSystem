@@ -1,0 +1,17 @@
+<h1>Notifications</h1><br>
+<table>
+<thead>
+<th>Instance</th>
+<th>Name</th>
+<th>Message</th>
+</thead>
+<tbody>
+<% @notifications.each do |n| %>
+<tr>
+<td><%= n.notifiable_type %></td>
+<td><%= n.display_name %></td>
+<td><%= n.message %></td>
+</tr>
+<% end %>
+</tbody>
+</table>  
