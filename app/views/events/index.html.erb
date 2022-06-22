@@ -1,0 +1,27 @@
+<h1>Events</h1>
+<table>
+<thead>
+<th>Name</th>
+<th>Start time</th>
+<th>End time</th>
+<th>Location</th>
+<th>City</th>
+<th>Category</th>
+<th>Seats Left</th>
+</thead>
+<tbody>
+<% @event.each do |e| %>
+<tr>
+<td><%= e.name %></td>
+<td><%= e.start_time %></td>
+<td><%= e.end_time %></td>
+<td><%= e.location.name %></td>
+<td><%= e.location.city.name %></td>
+<td><%= e.category.name %></td>
+<td><%= e.location.capacity - e.bookings.sum(:capacity)%>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to "Add New Event",  new_event_path %>
